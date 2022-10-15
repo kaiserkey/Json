@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+    <head>
+        <title>Leer Archivos Json</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1>Leer Archivos Json</h1>
+        <script>
+            const requestAsync = async (url) => {
+                const response = await fetch(url);
+                if (!response.ok)
+                    throw new Error("WARN", response.status);
+                const data = await response.json();
+                return console.log(data.saludar);
+            }
+            requestAsync("./myFile.json");
+        </script>
+    </body>
+</html>
